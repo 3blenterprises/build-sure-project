@@ -166,7 +166,7 @@ const Contact = () => {
                 <div className="space-y-3">
                   <div className="flex items-center gap-3 text-sm text-muted-foreground">
                     <Mail className="w-4 h-4 text-accent" />
-                    info@3blstudios.com
+                    studios@3BLenterprises.com
                   </div>
                   <div className="flex items-center gap-3 text-sm text-muted-foreground">
                     <Clock className="w-4 h-4 text-accent" />
