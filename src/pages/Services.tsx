@@ -2,6 +2,11 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import SectionHeading from "@/components/SectionHeading";
+import bimStructure from "@/assets/bim-structure.png";
+import bimMep from "@/assets/bim-mep.png";
+import bimCoordination from "@/assets/bim-coordination.png";
+import bimConstruction from "@/assets/bim-construction.png";
+import bg4 from "@/assets/bg-4.png";
 import {
   Box,
   Search,
@@ -34,24 +39,28 @@ const categories = [
     title: "BIM Modeling & Documentation",
     desc: "High-accuracy, build-ready models and coordinated drawing sets designed for real-world construction conditions.",
     items: ["LOD 300–400 discipline-specific modeling", "Architectural, Structural, and MEP modeling", "Shop drawing production", "As-built modeling", "Revit-based documentation packages", "Model updates and revisions"],
+    image: bimStructure
   },
   {
     icon: Search,
     title: "Clash Detection & Coordination",
     desc: "Structured coordination workflows that identify and resolve conflicts before they impact schedule or cost.",
     items: ["Federated model coordination", "Clash detection and reporting", "Prioritized clash resolution workflows", "Coordination meeting support", "Model audit and validation"],
+    image: bimCoordination
   },
   {
     icon: ClipboardCheck,
     title: "Constructability Review & Engineering Oversight",
     desc: "Technical review of models and drawings from a constructability and execution perspective.",
     items: ["Constructability analysis", "Documentation clarity reviews", "Design intent verification", "Engineering supervision of deliverables", "Quality control checkpoints"],
+    image: bimConstruction
   },
   {
     icon: Headphones,
     title: "Ongoing Technical Support",
     desc: "Flexible engagement models allowing contractors to scale BIM capacity without long-term overhead risk.",
     items: ["Project-based support", "Dedicated remote BIM team", "Overflow support during peak workloads", "Long-term coordination partnership"],
+    image: bimMep
   },
 ];
 
@@ -75,7 +84,11 @@ const Services = () => (
   <>
     {/* Hero */}
     <section className="relative bg-navy overflow-hidden">
-      <div className="absolute inset-0 bg-grid-pattern-dark opacity-40" />
+      <div 
+        className="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-overlay"
+        style={{ backgroundImage: `url(${bg4})` }}
+      />
+      <div className="absolute inset-0 bg-navy/60" />
       <div className="container relative z-10 py-20 md:py-28 text-center max-w-4xl">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -120,7 +133,7 @@ const Services = () => (
     <section className="py-20 bg-card">
       <div className="container">
         <SectionHeading title="Core Service Categories" />
-        <div className="space-y-8 max-w-5xl mx-auto">
+        <div className="space-y-12 max-w-5xl mx-auto">
           {categories.map((cat, i) => (
             <motion.div
               key={cat.title}
@@ -129,23 +142,32 @@ const Services = () => (
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="p-8 rounded-lg border border-border bg-background hover:shadow-lg transition-shadow"
+              className="p-8 rounded-lg border border-border bg-background hover:shadow-lg transition-shadow overflow-hidden"
             >
-              <div className="flex items-start gap-5">
-                <div className="w-12 h-12 rounded-md bg-accent/10 flex items-center justify-center flex-shrink-0">
-                  <cat.icon className="w-6 h-6 text-accent" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-heading text-xl font-semibold text-foreground mb-2">{cat.title}</h3>
-                  <p className="text-muted-foreground mb-4">{cat.desc}</p>
-                  <ul className="grid sm:grid-cols-2 gap-2">
+              <div className={`flex flex-col ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 items-center`}>
+                <div className="flex-1 space-y-4">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-10 h-10 rounded-md bg-accent/10 flex items-center justify-center flex-shrink-0">
+                      <cat.icon className="w-5 h-5 text-accent" />
+                    </div>
+                    <h3 className="font-heading text-xl font-semibold text-foreground">{cat.title}</h3>
+                  </div>
+                  <p className="text-muted-foreground">{cat.desc}</p>
+                  <ul className="grid sm:grid-cols-2 gap-x-4 gap-y-2 pt-2">
                     {cat.items.map((item) => (
-                      <li key={item} className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
+                      <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0 mt-1.5" />
                         {item}
                       </li>
                     ))}
                   </ul>
+                </div>
+                <div className="w-full lg:w-2/5 aspect-video rounded-md overflow-hidden border border-border/50 shadow-sm">
+                  <img 
+                    src={cat.image} 
+                    alt={cat.title} 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
               </div>
             </motion.div>
