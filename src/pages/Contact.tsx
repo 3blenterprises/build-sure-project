@@ -75,7 +75,7 @@ const Contact = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-background bg-grid-pattern">
+      <section id="inquiry-form" className="py-20 bg-background bg-grid-pattern">
         <div className="container max-w-5xl">
           <div className="grid md:grid-cols-3 gap-12">
             {/* Form */}

@@ -38,7 +38,14 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 {item.label}
               </Link>
             ))}
-            <Link to="/contact">
+            <Link
+              to="/contact#inquiry-form"
+              onClick={() => {
+                if (location.pathname === "/contact") {
+                  document.getElementById("inquiry-form")?.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+            >
               <Button variant="cta" size="sm" className="ml-3">
                 Get Started
               </Button>
@@ -72,7 +79,15 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 {item.label}
               </Link>
             ))}
-            <Link to="/contact" onClick={() => setMobileOpen(false)}>
+            <Link
+              to="/contact#inquiry-form"
+              onClick={() => {
+                setMobileOpen(false);
+                if (location.pathname === "/contact") {
+                  document.getElementById("inquiry-form")?.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+            >
               <Button variant="cta" size="sm" className="w-full mt-2">
                 Get Started
               </Button>
