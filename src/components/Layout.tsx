@@ -109,7 +109,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             <div>
               <h4 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4 text-steel">Contact</h4>
               <ul className="space-y-2 text-sm text-steel">
-                <li>info@3blstudios.com</li>
+                <li>studios@3BLenterprises.com</li>
                 <li>Monday – Friday</li>
                 <li>Europe & Middle East hours</li>
               </ul>
