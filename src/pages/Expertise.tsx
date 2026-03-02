@@ -21,6 +21,7 @@ import {
   Handshake,
 } from "lucide-react";
 import bg4 from "@/assets/bg-4.png";
+import commCollabImg from "@/assets/communication-collaboration-standards.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -202,6 +203,75 @@ const Expertise = () => (
                 </li>
               ))}
             </ul>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+
+    {/* Engineering Supervision & Accountability */}
+    <section className="py-20 bg-background bg-grid-pattern">
+      <div className="container max-w-3xl">
+        <SectionHeading title="Engineering Supervision & Accountability" />
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="p-8 rounded-lg border border-border bg-card"
+        >
+          <p className="text-muted-foreground mb-6">
+            All project outputs are supervised by licensed professional engineers. This ensures:
+          </p>
+          <ul className="space-y-3">
+            {["Alignment with practical installation logic", "Documentation clarity", "Design-intent verification", "Professional accountability"].map((item) => (
+              <li key={item} className="flex items-center gap-3 text-foreground">
+                <CheckCircle2 className="w-4 h-4 text-accent flex-shrink-0" />
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-6 text-sm font-medium text-accent">
+            We do not operate as unmanaged drafting capacity. We operate as a structured technical partner.
+          </p>
+        </motion.div>
+      </div>
+    </section>
+
+    {/* Communication & Collaboration Standards */}
+    <section className="py-20 bg-card">
+      <div className="container max-w-4xl">
+        <SectionHeading title="Communication & Collaboration Standards" />
+        <div className="grid md:grid-cols-2 gap-8 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-muted-foreground mb-6">
+              We integrate into client workflows through:
+            </p>
+            <ul className="space-y-3">
+              {["Defined response time windows", "Structured reporting cadence", "Shared coordination platforms", "Clear escalation channels"].map((item) => (
+                <li key={item} className="flex items-center gap-3 text-foreground text-sm">
+                  <MessageSquare className="w-4 h-4 text-accent flex-shrink-0" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-6 text-sm font-medium text-accent">
+              We prioritize transparency over volume.
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="rounded-lg overflow-hidden border border-border shadow-2xl"
+          >
+            <img
+              src={commCollabImg}
+              alt="Global Team Connectivity showing overlapped time zones between Ethiopia and United States"
+              className="w-full h-auto"
+            />
           </motion.div>
         </div>
       </div>
