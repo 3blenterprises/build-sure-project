@@ -2,8 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import SectionHeading from "@/components/SectionHeading";
-import heroBim from "@/assets/bim-construction.png";
-import bg5 from "@/assets/bg-5.png";
+import heroPage1 from "@/assets/hero-page-1.png";
 import {
   CheckCircle,
   DollarSign,
@@ -60,7 +59,7 @@ const Index = () => {
       <section className="relative bg-navy overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-overlay"
-          style={{ backgroundImage: `url(${bg5})` }}
+          style={{ backgroundImage: `url(${heroPage1})` }}
         />
         <div className="absolute inset-0 bg-navy/60" />
         <div className="container relative z-10 py-20 md:py-32">
@@ -95,7 +94,7 @@ const Index = () => {
               className="hidden md:block"
             >
               <img
-                src={heroBim}
+                src={heroPage1}
                 alt="3D BIM model wireframe visualization"
                 className="w-full rounded-lg shadow-2xl shadow-blueprint/20"
               />

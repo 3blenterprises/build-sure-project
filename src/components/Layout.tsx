@@ -100,18 +100,18 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
       <footer className="bg-navy text-primary-foreground">
         <div className="container py-12">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="md:col-span-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+            <div className="sm:col-span-2">
               <span className="font-heading text-xl font-bold">
                 3BL<span className="text-blueprint">Studios</span>
               </span>
-              <p className="mt-3 text-sm text-steel max-w-md">
+              <p className="mt-3 text-sm text-steel max-w-md leading-relaxed">
                 Engineering-led BIM & constructability services for contractors across Europe and the Middle East. Supervised by U.S.-licensed professional engineers.
               </p>
             </div>
             <div>
-              <h4 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4 text-steel">Navigation</h4>
-              <ul className="space-y-2">
+              <h4 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4 text-primary-foreground">Navigation</h4>
+              <ul className="space-y-2.5">
                 {navItems.map((item) => (
                   <li key={item.path}>
                     <Link to={item.path} className="text-sm text-steel hover:text-blueprint transition-colors">
@@ -122,8 +122,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               </ul>
             </div>
             <div>
-              <h4 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4 text-steel">Contact</h4>
-              <ul className="space-y-2 text-sm text-steel">
+              <h4 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4 text-primary-foreground">Contact</h4>
+              <ul className="space-y-2.5 text-sm text-steel">
                 <li>studios@3BLenterprises.com</li>
                 <li>Monday – Friday</li>
                 <li>Europe & Middle East hours</li>
