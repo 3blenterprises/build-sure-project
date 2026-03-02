@@ -8,7 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { toast } from "sonner";
 import { Mail, Clock } from "lucide-react";
 import { z } from "zod";
-import heroPage5 from "@/assets/hero-page-5.png";
+import bg5 from "@/assets/bg-5.png";
 
 const contactSchema = z.object({
   fullName: z.string().trim().min(1, "Full name is required").max(100),
@@ -57,7 +57,7 @@ const Contact = () => {
       <section className="relative bg-navy overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-overlay"
-          style={{ backgroundImage: `url(${heroPage5})` }}
+          style={{ backgroundImage: `url(${bg5})` }}
         />
         <div className="absolute inset-0 bg-navy/60" />
         <div className="container relative z-10 py-20 md:py-28 text-center max-w-3xl">

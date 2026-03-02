@@ -12,7 +12,7 @@ import serviceConcreteLift2 from "@/assets/service-concrete-lift-2.png";
 import serviceConcreteLift3 from "@/assets/service-concrete-lift-3.png";
 import serviceCoordination2 from "@/assets/service-coordination-2.png";
 import serviceFormwork2 from "@/assets/service-formwork-2.png";
-import heroPage2 from "@/assets/hero-page-2.png";
+import bg4 from "@/assets/bg-4.png";
 import {
   Box,
   Search,
@@ -92,7 +92,7 @@ const Services = () => (
     <section className="relative bg-navy overflow-hidden">
       <div 
         className="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-overlay"
-        style={{ backgroundImage: `url(${heroPage2})` }}
+        style={{ backgroundImage: `url(${bg4})` }}
       />
       <div className="absolute inset-0 bg-navy/60" />
       <div className="container relative z-10 py-20 md:py-28 text-center max-w-4xl">

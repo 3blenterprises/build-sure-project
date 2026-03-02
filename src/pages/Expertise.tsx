@@ -20,7 +20,7 @@ import {
   Globe,
   Handshake,
 } from "lucide-react";
-import heroPage3 from "@/assets/hero-page-3.png";
+import bg4 from "@/assets/bg-4.png";
 import commCollabImg from "@/assets/communication-collaboration-standards.png";
 
 const fadeUp = {
@@ -86,7 +86,7 @@ const Expertise = () => (
     <section className="relative bg-navy overflow-hidden">
       <div 
         className="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-overlay"
-        style={{ backgroundImage: `url(${heroPage3})` }}
+        style={{ backgroundImage: `url(${bg4})` }}
       />
       <div className="absolute inset-0 bg-navy/60" />
       <div className="container relative z-10 py-20 md:py-28 text-center max-w-4xl">

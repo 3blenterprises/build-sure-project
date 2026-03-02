@@ -16,7 +16,7 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import commCollab from "@/assets/communication-collaboration-2.png";
-import heroPage4 from "@/assets/hero-page-4.png";
+import bg5 from "@/assets/bg-5.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -48,7 +48,7 @@ const Leadership = () => (
     <section className="relative bg-navy overflow-hidden">
       <div 
         className="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-overlay"
-        style={{ backgroundImage: `url(${heroPage4})` }}
+        style={{ backgroundImage: `url(${bg5})` }}
       />
       <div className="absolute inset-0 bg-navy/60" />
       <div className="container relative z-10 py-20 md:py-28 text-center max-w-4xl">
