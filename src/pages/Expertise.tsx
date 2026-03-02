@@ -20,6 +20,7 @@ import {
   Globe,
   Handshake,
 } from "lucide-react";
+import bg4 from "@/assets/bg-4.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -82,7 +83,11 @@ const Expertise = () => (
   <>
     {/* Hero */}
     <section className="relative bg-navy overflow-hidden">
-      <div className="absolute inset-0 bg-grid-pattern-dark opacity-40" />
+      <div 
+        className="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-overlay"
+        style={{ backgroundImage: `url(${bg4})` }}
+      />
+      <div className="absolute inset-0 bg-navy/60" />
       <div className="container relative z-10 py-20 md:py-28 text-center max-w-4xl">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
