@@ -2,10 +2,16 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import SectionHeading from "@/components/SectionHeading";
-import bimStructure from "@/assets/bim-structure.png";
-import bimMep from "@/assets/bim-mep.png";
-import bimCoordination from "@/assets/bim-coordination.png";
-import bimConstruction from "@/assets/bim-construction.png";
+import serviceRebar1 from "@/assets/service-rebar-1.png";
+import serviceCoordination1 from "@/assets/service-coordination-1.png";
+import serviceConcreteLift1 from "@/assets/service-concrete-lift-1.png";
+import serviceFormwork1 from "@/assets/service-formwork-1.png";
+import serviceRebar2 from "@/assets/service-rebar-2.png";
+import serviceRebar3 from "@/assets/service-rebar-3.png";
+import serviceConcreteLift2 from "@/assets/service-concrete-lift-2.png";
+import serviceConcreteLift3 from "@/assets/service-concrete-lift-3.png";
+import serviceCoordination2 from "@/assets/service-coordination-2.png";
+import serviceFormwork2 from "@/assets/service-formwork-2.png";
 import bg4 from "@/assets/bg-4.png";
 import {
   Box,
@@ -36,31 +42,31 @@ const fadeUp = {
 const categories = [
   {
     icon: Box,
-    title: "BIM Modeling & Documentation",
-    desc: "High-accuracy, build-ready models and coordinated drawing sets designed for real-world construction conditions.",
-    items: ["LOD 300–400 discipline-specific modeling", "Architectural, Structural, and MEP modeling", "Shop drawing production", "As-built modeling", "Revit-based documentation packages", "Model updates and revisions"],
-    image: bimStructure
+    title: "Rebar Modeling & Shop Drawings",
+    desc: "Parametric rebar modeling and 2D detailing that automates bending schedules and identifies congestion early.",
+    items: ["LOD 350-400 rebar modeling", "Automated bending schedules", "Congestion analysis", "2D shop drawings", "Prefabrication planning", "Splice location optimization"],
+    image: serviceRebar1
   },
   {
     icon: Search,
-    title: "Clash Detection & Coordination",
-    desc: "Structured coordination workflows that identify and resolve conflicts before they impact schedule or cost.",
-    items: ["Federated model coordination", "Clash detection and reporting", "Prioritized clash resolution workflows", "Coordination meeting support", "Model audit and validation"],
-    image: bimCoordination
+    title: "MEP & Embed Coordination",
+    desc: "Precise coordination of mechanical, electrical, and plumbing systems with structural elements to prevent field conflicts.",
+    items: ["Sleeve and embed placement", "Clash detection reports", "Penetration management", "Coordination meetings", "Installation drawings"],
+    image: serviceCoordination1
   },
   {
     icon: ClipboardCheck,
-    title: "Constructability Review & Engineering Oversight",
-    desc: "Technical review of models and drawings from a constructability and execution perspective.",
-    items: ["Constructability analysis", "Documentation clarity reviews", "Design intent verification", "Engineering supervision of deliverables", "Quality control checkpoints"],
-    image: bimConstruction
+    title: "Concrete Lift Drawings & Sequence",
+    desc: "Detailed pour sequencing and lift drawings that align with your construction schedule and resource planning.",
+    items: ["Pour break planning", "Lift drawings", "Quantity takeoffs per pour", "Schedule integration", "Visual method statements"],
+    image: serviceConcreteLift1
   },
   {
     icon: Headphones,
-    title: "Ongoing Technical Support",
-    desc: "Flexible engagement models allowing contractors to scale BIM capacity without long-term overhead risk.",
-    items: ["Project-based support", "Dedicated remote BIM team", "Overflow support during peak workloads", "Long-term coordination partnership"],
-    image: bimMep
+    title: "Formwork Modeling & Planning",
+    desc: "Optimized formwork planning and cycling strategies to reduce material waste and improve cycle times.",
+    items: ["Formwork systems modeling", "Cycle planning & optimization", "Material quantity tracking", "Assembly sequencing", "Reuse strategies"],
+    image: serviceFormwork1
   },
 ];
 
@@ -176,7 +182,44 @@ const Services = () => (
       </div>
     </section>
 
-    {/* Industries */}
+
+    {/* Detailed Gallery */}
+    <section className="py-20 bg-background">
+      <div className="container">
+        <SectionHeading title="Detailed Deliverables" subtitle="Examples of our high-precision documentation and modeling standards." />
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            { img: serviceRebar2, title: "Rebar Congestion Analysis" },
+            { img: serviceRebar3, title: "Complex Connection Detailing" },
+            { img: serviceConcreteLift2, title: "Multi-Level Pour Sections" },
+            { img: serviceConcreteLift3, title: "3D Pour Sequencing" },
+            { img: serviceCoordination2, title: "Embedded Plate Coordination" },
+            { img: serviceFormwork2, title: "Formwork Assembly Steps" },
+          ].map((item, i) => (
+             <motion.div
+              key={i}
+              variants={fadeUp}
+              custom={i}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="group relative aspect-video overflow-hidden rounded-lg border border-border shadow-sm"
+            >
+              <img 
+                src={item.img} 
+                alt={item.title} 
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                <p className="text-white font-medium text-sm">{item.title}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Industries */ }
     <section className="py-20 bg-background bg-grid-pattern">
       <div className="container">
         <SectionHeading title="Industries & Project Types Served" />
