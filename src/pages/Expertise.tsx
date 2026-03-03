@@ -231,9 +231,6 @@ const Expertise = () => (
               </li>
             ))}
           </ul>
-          <p className="mt-6 text-sm font-medium text-accent">
-            We do not operate as unmanaged drafting capacity. We operate as a structured technical partner.
-          </p>
         </motion.div>
       </div>
     </section>
@@ -259,9 +256,6 @@ const Expertise = () => (
                 </li>
               ))}
             </ul>
-            <p className="mt-6 text-sm font-medium text-accent">
-              We prioritize transparency over volume.
-            </p>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, x: 20 }}
