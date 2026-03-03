@@ -1,3 +1,4 @@
+import SEOHead from "@/components/SEOHead";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -44,6 +45,7 @@ const commitments = [
 
 const Leadership = () => (
   <>
+    <SEOHead title="Leadership & Governance" description="U.S.-licensed professional engineers supervise all BIM deliverables. Learn about our engineering governance and quality accountability framework." path="/leadership" />
     {/* Hero */}
     <section className="relative bg-navy overflow-hidden">
       <div 

@@ -1,3 +1,4 @@
+import SEOHead from "@/components/SEOHead";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -82,6 +83,7 @@ const bestFit = [
 
 const Expertise = () => (
   <>
+    <SEOHead title="Our Expertise & Approach" description="Engineering discipline meets construction reality. Discover our 5-step workflow, quality assurance system, and constructability-driven BIM methodology." path="/expertise" />
     {/* Hero */}
     <section className="relative bg-navy overflow-hidden">
       <div 

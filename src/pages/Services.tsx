@@ -1,3 +1,4 @@
+import SEOHead from "@/components/SEOHead";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -88,6 +89,7 @@ const principles = [
 
 const Services = () => (
   <>
+    <SEOHead title="BIM & Construction Services" description="Concrete lift drawings, rebar modeling, formwork planning, and embedded coordination services for contractors across Europe and the Middle East." path="/services" />
     {/* Hero */}
     <section className="relative bg-navy overflow-hidden">
       <div 
