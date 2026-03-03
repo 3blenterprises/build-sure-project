@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import SectionHeading from "@/components/SectionHeading";
 import heroBim from "@/assets/bim-construction.png";
 import bg5 from "@/assets/bg-5.png";
+import bimShowcase1 from "@/assets/bim-showcase-1.png";
+import bimShowcase2 from "@/assets/bim-showcase-2.png";
 import {
   CheckCircle,
   DollarSign,
@@ -208,6 +210,50 @@ const Index = () => {
                 <p className="text-sm font-medium text-steel">{pt.title}</p>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* BIM SHOWCASE */}
+      <section className="py-20 bg-background overflow-hidden">
+        <div className="container">
+          <SectionHeading
+            title="Precision-Modeled for Real Construction"
+            subtitle="From structural BIM coordination to construction phase visualization — our models bridge the gap between design intent and field execution."
+          />
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="group relative rounded-lg overflow-hidden border border-border shadow-lg"
+            >
+              <img
+                src={bimShowcase1}
+                alt="3D structural BIM model with grid coordination"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                <p className="text-primary-foreground text-sm font-medium">Structural BIM Coordination Model</p>
+              </div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.15 }}
+              className="group relative rounded-lg overflow-hidden border border-border shadow-lg"
+            >
+              <img
+                src={bimShowcase2}
+                alt="BIM coordination model with construction phase visualization"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                <p className="text-primary-foreground text-sm font-medium">Construction Phase Visualization</p>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
