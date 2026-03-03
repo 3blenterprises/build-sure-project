@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import SectionHeading from "@/components/SectionHeading";
+import SEOHead from "@/components/SEOHead";
 import heroBim from "@/assets/bim-construction.png";
 import bg5 from "@/assets/bg-5.png";
 import bimShowcase1 from "@/assets/bim-showcase-1.png";
@@ -58,6 +59,26 @@ const operatingPoints = [
 const Index = () => {
   return (
     <>
+      <SEOHead
+        title="3BL Studios – Engineering-Led BIM & Constructability Services"
+        description="First-pass accurate BIM models and build-ready construction documentation for contractors across Europe and the Middle East, supervised by U.S.-licensed professional engineers."
+        path="/"
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "3BL Studios",
+            url: "https://build-sure-project.lovable.app",
+            description: "Engineering-led BIM & constructability services for contractors across Europe and the Middle East.",
+            contactPoint: { "@type": "ContactPoint", email: "studios@3BLenterprises.com", contactType: "sales" },
+            areaServed: ["Europe", "Middle East"],
+            serviceType: ["BIM Modeling", "Construction Documentation", "Rebar Detailing", "Constructability Services"],
+          }),
+        }}
+      />
       {/* HERO */}
       <section className="relative bg-navy overflow-hidden">
         <div 

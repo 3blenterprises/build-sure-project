@@ -1,3 +1,4 @@
+import SEOHead from "@/components/SEOHead";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -53,6 +54,7 @@ const Contact = () => {
 
   return (
     <>
+      <SEOHead title="Contact Us" description="Start a project or book a consultation with 3BL Studios. Engineering-led BIM services for contractors in Europe and the Middle East." path="/contact" />
       {/* Hero */}
       <section className="relative bg-navy overflow-hidden">
         <div 
