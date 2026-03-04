@@ -213,8 +213,13 @@ const Expertise = () => (
     </section>
 
     {/* Engineering Supervision & Accountability */}
-    <section className="py-20 bg-background bg-grid-pattern">
-      <div className="container max-w-3xl">
+    <section className="relative py-20 bg-background overflow-hidden">
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-[0.07]"
+        style={{ backgroundImage: `url(${expertiseBg1})` }}
+      />
+      <div className="absolute inset-0 bg-background/80" />
+      <div className="container max-w-3xl relative z-10">
         <SectionHeading title="Engineering Supervision & Accountability" />
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -238,8 +243,13 @@ const Expertise = () => (
     </section>
 
     {/* Communication & Collaboration Standards */}
-    <section className="py-20 bg-card">
-      <div className="container max-w-4xl">
+    <section className="relative py-20 bg-card overflow-hidden">
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-[0.06]"
+        style={{ backgroundImage: `url(${expertiseBg2})` }}
+      />
+      <div className="absolute inset-0 bg-card/85" />
+      <div className="container max-w-4xl relative z-10">
         <SectionHeading title="Communication & Collaboration Standards" />
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <motion.div
