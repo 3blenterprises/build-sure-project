@@ -23,6 +23,8 @@ import {
 } from "lucide-react";
 import bg4 from "@/assets/bg-4.png";
 import commCollabImg from "@/assets/communication-collaboration-standards.png";
+import expertiseBg1 from "@/assets/expertise-bg-1.png";
+import expertiseBg2 from "@/assets/expertise-bg-2.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
