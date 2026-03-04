@@ -198,13 +198,6 @@ const Leadership = () => (
               </div>
             ))}
           </div>
-          <div className="mt-12 rounded-lg overflow-hidden border border-border shadow-2xl">
-            <img 
-              src={commCollab} 
-              alt="Global Team Connectivity showing overlapped time zones between Ethiopia and United States" 
-              className="w-full h-auto"
-            />
-          </div>
         </motion.div>
       </div>
     </section>
