@@ -25,6 +25,8 @@ import bg4 from "@/assets/bg-4.png";
 import commCollabImg from "@/assets/communication-collaboration-standards.png";
 import expertiseBg1 from "@/assets/expertise-bg-1.png";
 import expertiseBg2 from "@/assets/expertise-bg-2.png";
+import expertiseBg3 from "@/assets/expertise-bg-3.png";
+import expertiseBg4 from "@/assets/expertise-bg-4.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -115,8 +117,13 @@ const Expertise = () => (
     </section>
 
     {/* Philosophy */}
-    <section className="py-20 bg-background bg-grid-pattern">
-      <div className="container max-w-3xl text-center">
+    <section className="relative py-20 bg-background overflow-hidden">
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-[0.06]"
+        style={{ backgroundImage: `url(${expertiseBg3})` }}
+      />
+      <div className="absolute inset-0 bg-background/85" />
+      <div className="container max-w-3xl text-center relative z-10">
         <SectionHeading title="Our Philosophy" />
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -174,8 +181,13 @@ const Expertise = () => (
     </section>
 
     {/* QA System */}
-    <section className="py-20 bg-navy">
-      <div className="container max-w-4xl">
+    <section className="relative py-20 bg-navy overflow-hidden">
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-[0.08]"
+        style={{ backgroundImage: `url(${expertiseBg4})` }}
+      />
+      <div className="absolute inset-0 bg-navy/80" />
+      <div className="container max-w-4xl relative z-10">
         <SectionHeading title="Quality Assurance System" light />
         <div className="grid md:grid-cols-2 gap-8">
           <motion.div
