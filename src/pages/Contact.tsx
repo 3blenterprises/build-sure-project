@@ -184,8 +184,8 @@ const Contact = () => {
                   {errors.message && <p className="text-destructive text-xs mt-1">{errors.message}</p>}
                 </div>
 
-                <Button type="submit" variant="cta" size="lg" className="w-full sm:w-auto">
-                  Submit Inquiry
+                <Button type="submit" variant="cta" size="lg" className="w-full sm:w-auto" disabled={submitting}>
+                  {submitting ? "Submitting…" : "Submit Inquiry"}
                 </Button>
               </form>
             </motion.div>
