@@ -202,8 +202,6 @@ const Leadership = () => (
       </div>
     </section>
 
-    {/* Meet the Team */}
-    <TeamSection />
 
     {/* Commitment */}
     <section className="py-20 bg-card">
