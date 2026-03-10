@@ -16,8 +16,8 @@ import {
   Handshake,
   CheckCircle2,
 } from "lucide-react";
-import commCollab from "@/assets/communication-collaboration-2.png";
 import bg5 from "@/assets/bg-5.png";
+import TeamSection from "@/components/TeamSection";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
