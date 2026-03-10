@@ -1,5 +1,5 @@
 import SEOHead from "@/components/SEOHead";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -10,6 +10,9 @@ import { toast } from "sonner";
 import { Mail, Clock } from "lucide-react";
 import { z } from "zod";
 import bg5 from "@/assets/bg-5.png";
+
+// ✅ Change this to your FormSubmit alias key when ready
+const FORMSUBMIT_ENDPOINT = "https://formsubmit.co/ajax/studios@3blenterprises.com";
 
 const contactSchema = z.object({
   fullName: z.string().trim().min(1, "Full name is required").max(100),
@@ -30,8 +33,9 @@ const Contact = () => {
     message: "",
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const result = contactSchema.safeParse(form);
     if (!result.success) {
@@ -43,8 +47,33 @@ const Contact = () => {
       return;
     }
     setErrors({});
-    toast.success("Inquiry submitted! We'll respond within one business day.");
-    setForm({ fullName: "", company: "", email: "", projectType: "", projectPhase: "", message: "" });
+    setSubmitting(true);
+
+    try {
+      const res = await fetch(FORMSUBMIT_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          _subject: `New Inquiry from ${form.fullName} — ${form.company}`,
+          _template: "table",
+          "Full Name": form.fullName,
+          "Company": form.company,
+          "Email": form.email,
+          "Project Type": form.projectType,
+          "Project Phase": form.projectPhase,
+          "Message": form.message,
+        }),
+      });
+
+      if (!res.ok) throw new Error("Submit failed");
+
+      toast.success("Inquiry submitted! We'll respond within one business day.");
+      setForm({ fullName: "", company: "", email: "", projectType: "", projectPhase: "", message: "" });
+    } catch {
+      toast.error("Something went wrong. Please try again or email us directly.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const updateField = (field: string, value: string) => {
@@ -155,8 +184,8 @@ const Contact = () => {
                   {errors.message && <p className="text-destructive text-xs mt-1">{errors.message}</p>}
                 </div>
 
-                <Button type="submit" variant="cta" size="lg" className="w-full sm:w-auto">
-                  Submit Inquiry
+                <Button type="submit" variant="cta" size="lg" className="w-full sm:w-auto" disabled={submitting}>
+                  {submitting ? "Submitting…" : "Submit Inquiry"}
                 </Button>
               </form>
             </motion.div>
