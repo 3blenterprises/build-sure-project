@@ -118,9 +118,6 @@ const Leadership = () => (
               </li>
             ))}
           </ul>
-          <p className="mt-6 text-sm font-medium text-accent">
-            We do not operate as unmanaged drafting support. We operate under engineering oversight standards.
-          </p>
         </motion.div>
       </div>
     </section>
