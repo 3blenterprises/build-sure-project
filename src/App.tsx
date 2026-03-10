@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import Services from "./pages/Services";
 import Expertise from "./pages/Expertise";
 import Leadership from "./pages/Leadership";
+import MeetTheTeam from "./pages/MeetTheTeam";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
