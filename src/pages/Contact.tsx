@@ -1,5 +1,5 @@
 import SEOHead from "@/components/SEOHead";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -10,6 +10,9 @@ import { toast } from "sonner";
 import { Mail, Clock } from "lucide-react";
 import { z } from "zod";
 import bg5 from "@/assets/bg-5.png";
+
+// ✅ Change this to your FormSubmit alias key when ready
+const FORMSUBMIT_ENDPOINT = "https://formsubmit.co/ajax/studios@3blenterprises.com";
 
 const contactSchema = z.object({
   fullName: z.string().trim().min(1, "Full name is required").max(100),
