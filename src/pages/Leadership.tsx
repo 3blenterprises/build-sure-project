@@ -17,7 +17,10 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import bg5 from "@/assets/bg-5.png";
-
+import teamChris from "@/assets/team-chris.png";
+import teamGelila from "@/assets/team-gelila.jpg";
+import teamYayne from "@/assets/team-yayne.png";
+import teamFiker from "@/assets/team-fiker.jpg";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
