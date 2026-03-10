@@ -77,8 +77,50 @@ const Leadership = () => (
       </div>
     </section>
 
-    {/* Who We Are */}
+    {/* Leadership Team */}
     <section className="py-20 bg-background bg-grid-pattern">
+      <div className="container max-w-5xl">
+        <SectionHeading title="Leadership Team" subtitle="Driven by discipline. Built on trust." />
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+          {[
+            { name: "Chris Turnbull Grimes, P.E.", title: "Managing Director", photo: teamChris },
+            { name: "Gelila Tesfaye", title: "Head of 3BL Studios", photo: teamGelila },
+            { name: "Yayne Zenebe", title: "Senior Project Manager", photo: teamYayne },
+            { name: "Fiker Dereje", title: "Senior Project Manager", photo: teamFiker },
+          ].map((member, i) => (
+            <motion.div
+              key={member.name}
+              variants={fadeUp}
+              custom={i}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="group rounded-lg border border-border bg-card overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-accent/10 hover:border-accent/30 hover:-translate-y-1"
+            >
+              <div className="aspect-[3/4] overflow-hidden">
+                <img
+                  src={member.photo}
+                  alt={member.name}
+                  className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-4 text-center">
+                <h3 className="font-heading font-semibold text-foreground text-sm md:text-base leading-tight">
+                  {member.name}
+                </h3>
+                <p className="text-muted-foreground text-xs md:text-sm mt-1">
+                  {member.title}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Who We Are */}
+    <section className="py-20 bg-card">
       <div className="container max-w-3xl">
         <SectionHeading title="Who We Are" />
         <motion.div
