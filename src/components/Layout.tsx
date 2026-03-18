@@ -96,7 +96,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         )}
       </header>
 
-      <main className="flex-1">{children}</main>
+      <main className="flex-1" role="main">{children}</main>
 
       <footer className="bg-navy text-primary-foreground">
         <div className="container py-12">
