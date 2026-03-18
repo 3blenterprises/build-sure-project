@@ -119,8 +119,11 @@ const Index = () => {
             >
               <img
                 src={heroBim}
-                alt="3D BIM model wireframe visualization"
+                alt="3D BIM model wireframe visualization of a multi-story commercial building by 3BL Studios"
                 className="w-full rounded-lg shadow-2xl shadow-blueprint/20"
+                loading="eager"
+                width={600}
+                height={400}
               />
             </motion.div>
           </div>
