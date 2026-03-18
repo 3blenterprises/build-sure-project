@@ -89,7 +89,33 @@ const principles = [
 
 const Services = () => (
   <>
-    <SEOHead title="BIM & Construction Services" description="Concrete lift drawings, rebar modeling, formwork planning, and embedded coordination services for contractors across Europe and the Middle East." path="/services" />
+    <SEOHead
+      title="BIM & Construction Services"
+      description="Concrete lift drawings, rebar modeling, formwork planning, and embedded coordination services for contractors across Europe and the Middle East."
+      path="/services"
+      jsonLd={{
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "BIM Modeling and Construction Documentation",
+        "provider": {
+          "@type": "Organization",
+          "name": "3BL Studios",
+          "url": "https://3bl-studios.com"
+        },
+        "areaServed": ["Europe", "Middle East"],
+        "description": "Concrete lift drawings, rebar modeling, formwork planning, and embedded coordination services for contractors.",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "BIM Services",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Concrete Lift Drawings" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Rebar Modeling & Detailing" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Formwork Planning" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Embedded Coordination" } }
+          ]
+        }
+      }}
+    />
     {/* Hero */}
     <section className="relative bg-navy overflow-hidden">
       <div 
