@@ -5,13 +5,14 @@ interface SEOHeadProps {
   description: string;
   path: string;
   type?: string;
+  jsonLd?: Record<string, unknown>;
 }
 
 const SITE_URL = "https://3bl-studios.com";
 const SITE_NAME = "3BL Studios";
 const OG_IMAGE = "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4e38298c-f70d-40e0-aae2-b33fe12a4935/id-preview-e672c856--e36374fa-a7b4-461b-ae37-b65541a57782.lovable.app-1772448910599.png";
 
-const SEOHead = ({ title, description, path, type = "website" }: SEOHeadProps) => {
+const SEOHead = ({ title, description, path, type = "website", jsonLd }: SEOHeadProps) => {
   const fullTitle = path === "/" ? title : `${title} | ${SITE_NAME}`;
   const canonicalUrl = `${SITE_URL}${path}`;
 
@@ -47,7 +48,23 @@ const SEOHead = ({ title, description, path, type = "website" }: SEOHeadProps) =
       document.head.appendChild(link);
     }
     link.setAttribute("href", canonicalUrl);
-  }, [fullTitle, description, canonicalUrl, type]);
+
+    // JSON-LD structured data
+    if (jsonLd) {
+      const existingScript = document.querySelector('script[data-seo-jsonld]');
+      if (existingScript) existingScript.remove();
+      const script = document.createElement("script");
+      script.type = "application/ld+json";
+      script.setAttribute("data-seo-jsonld", "true");
+      script.textContent = JSON.stringify(jsonLd);
+      document.head.appendChild(script);
+    }
+
+    return () => {
+      const existingScript = document.querySelector('script[data-seo-jsonld]');
+      if (existingScript) existingScript.remove();
+    };
+  }, [fullTitle, description, canonicalUrl, type, jsonLd]);
 
   return null;
 };
