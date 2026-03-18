@@ -24,7 +24,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-1">
+          <nav className="hidden md:flex items-center gap-1" aria-label="Main navigation">
             {navItems.map((item) => (
               <Link
                 key={item.path}
