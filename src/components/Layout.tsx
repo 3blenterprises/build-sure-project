@@ -64,7 +64,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
         {/* Mobile menu */}
         {mobileOpen && (
-          <nav className="md:hidden border-t border-border bg-card p-4 space-y-1 animate-fade-in">
+          <nav className="md:hidden border-t border-border bg-card p-4 space-y-1 animate-fade-in" aria-label="Mobile navigation">
             {navItems.map((item) => (
               <Link
                 key={item.path}
