@@ -3,23 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- TODO: Set the document title to the name of your application -->
     <title>3BL Studios – Engineering-Led BIM &amp; Constructability Services</title>
     <meta name="description" content="First-pass accurate BIM models and build-ready construction documentation for contractors across Europe and the Middle East.">
     <meta name="author" content="3BL Studios" />
     <link rel="icon" href="/favicon.png" type="image/png" />
-    
+    <link rel="canonical" href="https://3bl-studios.com/" />
+
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="3BL Studios" />
+    <meta property="og:title" content="3BL Studios – Engineering-Led BIM &amp; Constructability Services">
+    <meta property="og:description" content="First-pass accurate BIM models and build-ready construction documentation for contractors across Europe and the Middle East.">
+    <meta property="og:url" content="https://3bl-studios.com/" />
     <meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4e38298c-f70d-40e0-aae2-b33fe12a4935/id-preview-e672c856--e36374fa-a7b4-461b-ae37-b65541a57782.lovable.app-1772448910599.png">
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@Lovable" />
+    <meta name="twitter:title" content="3BL Studios – Engineering-Led BIM &amp; Constructability Services">
+    <meta name="twitter:description" content="First-pass accurate BIM models and build-ready construction documentation for contractors across Europe and the Middle East.">
     <meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4e38298c-f70d-40e0-aae2-b33fe12a4935/id-preview-e672c856--e36374fa-a7b4-461b-ae37-b65541a57782.lovable.app-1772448910599.png">
-    <meta property="og:title" content="3BL Studios – Engineering-Led BIM &amp; Constructability Services">
-  <meta name="twitter:title" content="3BL Studios – Engineering-Led BIM &amp; Constructability Services">
-  <meta property="og:description" content="First-pass accurate BIM models and build-ready construction documentation for contractors across Europe and the Middle East.">
-  <meta name="twitter:description" content="First-pass accurate BIM models and build-ready construction documentation for contractors across Europe and the Middle East.">
-</head>
+
+    <!-- JSON-LD Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "3BL Studios",
+      "url": "https://3bl-studios.com",
+      "description": "Engineering-led BIM & constructability services for contractors across Europe and the Middle East.",
+      "email": "studios@3BLenterprises.com",
+      "sameAs": [],
+      "serviceArea": {
+        "@type": "GeoShape",
+        "name": "Europe and Middle East"
+      },
+      "knowsAbout": ["BIM Modeling", "Construction Documentation", "MEP Coordination", "Structural Engineering", "Constructability Services"]
+    }
+    </script>
+
+    <!-- GitHub Pages SPA redirect handler -->
+    <script>
+      (function(l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function(s) {
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
+        }
+      }(window.location))
+    </script>
+  </head>
 
   <body>
     <div id="root"></div>

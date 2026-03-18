@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route } from "react-router-dom"; // Change this
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/toaster";
@@ -18,8 +18,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      {/* Change BrowserRouter to HashRouter below */}
-      <HashRouter> 
+      <BrowserRouter>
         <Layout>
           <Routes>
             <Route path="/" element={<Index />} />
@@ -30,7 +29,7 @@ const App = () => (
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
-      </HashRouter>
+      </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );
