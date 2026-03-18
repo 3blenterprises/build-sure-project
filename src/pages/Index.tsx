@@ -80,7 +80,7 @@ const Index = () => {
         }}
       />
       {/* HERO */}
-      <section className="relative bg-navy overflow-hidden">
+      <section className="relative bg-navy overflow-hidden" aria-label="Hero">
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-overlay"
           style={{ backgroundImage: `url(${bg5})` }}
