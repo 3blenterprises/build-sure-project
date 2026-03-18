@@ -24,7 +24,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-1">
+          <nav className="hidden md:flex items-center gap-1" aria-label="Main navigation">
             {navItems.map((item) => (
               <Link
                 key={item.path}
@@ -64,7 +64,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
         {/* Mobile menu */}
         {mobileOpen && (
-          <nav className="md:hidden border-t border-border bg-card p-4 space-y-1 animate-fade-in">
+          <nav className="md:hidden border-t border-border bg-card p-4 space-y-1 animate-fade-in" aria-label="Mobile navigation">
             {navItems.map((item) => (
               <Link
                 key={item.path}
@@ -96,7 +96,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         )}
       </header>
 
-      <main className="flex-1">{children}</main>
+      <main className="flex-1" role="main">{children}</main>
 
       <footer className="bg-navy text-primary-foreground">
         <div className="container py-12">

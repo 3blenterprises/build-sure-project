@@ -87,7 +87,29 @@ const bestFit = [
 
 const Expertise = () => (
   <>
-    <SEOHead title="Our Expertise & Approach" description="Engineering discipline meets construction reality. Discover our 5-step workflow, quality assurance system, and constructability-driven BIM methodology." path="/expertise" />
+    <SEOHead
+      title="Our Expertise & Approach"
+      description="Engineering discipline meets construction reality. Discover our 5-step workflow, quality assurance system, and constructability-driven BIM methodology."
+      path="/expertise"
+      jsonLd={{
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Our Expertise & Approach | 3BL Studios",
+        "description": "Engineering discipline meets construction reality. Discover our 5-step workflow, quality assurance system, and constructability-driven BIM methodology.",
+        "url": "https://3bl-studios.com/expertise",
+        "mainEntity": {
+          "@type": "HowTo",
+          "name": "3BL Studios 5-Step BIM Project Workflow",
+          "step": [
+            { "@type": "HowToStep", "name": "Project Intake & Scope Definition" },
+            { "@type": "HowToStep", "name": "Model Setup & Standards Alignment" },
+            { "@type": "HowToStep", "name": "Production & Quality Checkpoints" },
+            { "@type": "HowToStep", "name": "Engineering Review & Approval" },
+            { "@type": "HowToStep", "name": "Final Delivery & Handoff" }
+          ]
+        }
+      }}
+    />
     {/* Hero */}
     <section className="relative bg-navy overflow-hidden">
       <div 
@@ -289,8 +311,9 @@ const Expertise = () => (
           >
             <img
               src={commCollabImg}
-              alt="Global Team Connectivity showing overlapped time zones between Ethiopia and United States"
+              alt="Global team connectivity diagram showing overlapped working hours between 3BL Studios teams in Ethiopia and United States"
               className="w-full h-auto"
+              loading="lazy"
             />
           </motion.div>
         </div>

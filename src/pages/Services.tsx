@@ -89,7 +89,33 @@ const principles = [
 
 const Services = () => (
   <>
-    <SEOHead title="BIM & Construction Services" description="Concrete lift drawings, rebar modeling, formwork planning, and embedded coordination services for contractors across Europe and the Middle East." path="/services" />
+    <SEOHead
+      title="BIM & Construction Services"
+      description="Concrete lift drawings, rebar modeling, formwork planning, and embedded coordination services for contractors across Europe and the Middle East."
+      path="/services"
+      jsonLd={{
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "BIM Modeling and Construction Documentation",
+        "provider": {
+          "@type": "Organization",
+          "name": "3BL Studios",
+          "url": "https://3bl-studios.com"
+        },
+        "areaServed": ["Europe", "Middle East"],
+        "description": "Concrete lift drawings, rebar modeling, formwork planning, and embedded coordination services for contractors.",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "BIM Services",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Concrete Lift Drawings" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Rebar Modeling & Detailing" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Formwork Planning" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Embedded Coordination" } }
+          ]
+        }
+      }}
+    />
     {/* Hero */}
     <section className="relative bg-navy overflow-hidden">
       <div 
@@ -173,8 +199,9 @@ const Services = () => (
                 <div className="w-full lg:w-2/5 aspect-video rounded-md overflow-hidden border border-border/50 shadow-sm">
                   <img 
                     src={cat.image} 
-                    alt={cat.title} 
+                    alt={`${cat.title} — BIM service by 3BL Studios for construction projects`} 
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -209,8 +236,9 @@ const Services = () => (
             >
               <img 
                 src={item.img} 
-                alt={item.title} 
+                alt={`${item.title} — detailed BIM deliverable example by 3BL Studios`} 
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                 <p className="text-white font-medium text-sm">{item.title}</p>

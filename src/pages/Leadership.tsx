@@ -48,7 +48,27 @@ const commitments = [
 
 const Leadership = () => (
   <>
-    <SEOHead title="Leadership & Governance" description="U.S.-licensed professional engineers supervise all BIM deliverables. Learn about our engineering governance and quality accountability framework." path="/leadership" />
+    <SEOHead
+      title="Leadership & Governance"
+      description="U.S.-licensed professional engineers supervise all BIM deliverables. Learn about our engineering governance, quality accountability framework, and leadership team."
+      path="/leadership"
+      jsonLd={{
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "Leadership & Governance | 3BL Studios",
+        "url": "https://3bl-studios.com/leadership",
+        "mainEntity": {
+          "@type": "Organization",
+          "name": "3BL Studios",
+          "member": [
+            { "@type": "Person", "name": "Chris Turnbull Grimes, P.E.", "jobTitle": "Managing Director" },
+            { "@type": "Person", "name": "Gelila Tesfaye", "jobTitle": "Head of 3BL Studios" },
+            { "@type": "Person", "name": "Yayne Zenebe", "jobTitle": "Senior Project Manager" },
+            { "@type": "Person", "name": "Fiker Dereje", "jobTitle": "Senior Project Manager" }
+          ]
+        }
+      }}
+    />
     {/* Hero */}
     <section className="relative bg-navy overflow-hidden">
       <div 
@@ -100,7 +120,7 @@ const Leadership = () => (
               <div className="aspect-[3/4] overflow-hidden">
                 <img
                   src={member.photo}
-                  alt={member.name}
+                  alt={`${member.name}, ${member.title} at 3BL Studios`}
                   className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
                 />

@@ -63,24 +63,24 @@ const Index = () => {
         title="3BL Studios – Engineering-Led BIM & Constructability Services"
         description="First-pass accurate BIM models and build-ready construction documentation for contractors across Europe and the Middle East, supervised by U.S.-licensed professional engineers."
         path="/"
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            name: "3BL Studios",
-            url: "https://build-sure-project.lovable.app",
-            description: "Engineering-led BIM & constructability services for contractors across Europe and the Middle East.",
-            contactPoint: { "@type": "ContactPoint", email: "studios@3BLenterprises.com", contactType: "sales" },
-            areaServed: ["Europe", "Middle East"],
-            serviceType: ["BIM Modeling", "Construction Documentation", "Rebar Detailing", "Constructability Services"],
-          }),
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "ProfessionalService",
+          "name": "3BL Studios",
+          "url": "https://3bl-studios.com",
+          "description": "Engineering-led BIM & constructability services for contractors across Europe and the Middle East.",
+          "email": "studios@3BLenterprises.com",
+          "areaServed": [
+            { "@type": "Continent", "name": "Europe" },
+            { "@type": "Place", "name": "Middle East" }
+          ],
+          "serviceType": ["BIM Modeling", "Construction Documentation", "Rebar Detailing", "Constructability Services", "MEP Coordination"],
+          "knowsAbout": ["Building Information Modeling", "Concrete Lift Drawings", "Formwork Planning", "Rebar Modeling"],
+          "priceRange": "$$"
         }}
       />
       {/* HERO */}
-      <section className="relative bg-navy overflow-hidden">
+      <section className="relative bg-navy overflow-hidden" aria-label="Hero">
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-overlay"
           style={{ backgroundImage: `url(${bg5})` }}
@@ -119,8 +119,11 @@ const Index = () => {
             >
               <img
                 src={heroBim}
-                alt="3D BIM model wireframe visualization"
+                alt="3D BIM model wireframe visualization of a multi-story commercial building by 3BL Studios"
                 className="w-full rounded-lg shadow-2xl shadow-blueprint/20"
+                loading="eager"
+                width={600}
+                height={400}
               />
             </motion.div>
           </div>
@@ -252,8 +255,9 @@ const Index = () => {
             >
               <img
                 src={bimShowcase1}
-                alt="3D structural BIM model with grid coordination"
+                alt="3D structural BIM coordination model with grid lines showing rebar and concrete pour sequencing"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                 <p className="text-primary-foreground text-sm font-medium">Structural BIM Coordination Model</p>
@@ -268,8 +272,9 @@ const Index = () => {
             >
               <img
                 src={bimShowcase2}
-                alt="BIM coordination model with construction phase visualization"
+                alt="BIM coordination model showing construction phase visualization with MEP systems"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                 <p className="text-primary-foreground text-sm font-medium">Construction Phase Visualization</p>
