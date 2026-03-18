@@ -120,7 +120,7 @@ const Leadership = () => (
               <div className="aspect-[3/4] overflow-hidden">
                 <img
                   src={member.photo}
-                  alt={member.name}
+                  alt={`${member.name}, ${member.title} at 3BL Studios`}
                   className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
                 />

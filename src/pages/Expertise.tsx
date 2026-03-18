@@ -311,8 +311,9 @@ const Expertise = () => (
           >
             <img
               src={commCollabImg}
-              alt="Global Team Connectivity showing overlapped time zones between Ethiopia and United States"
+              alt="Global team connectivity diagram showing overlapped working hours between 3BL Studios teams in Ethiopia and United States"
               className="w-full h-auto"
+              loading="lazy"
             />
           </motion.div>
         </div>

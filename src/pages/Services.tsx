@@ -236,8 +236,9 @@ const Services = () => (
             >
               <img 
                 src={item.img} 
-                alt={item.title} 
+                alt={`${item.title} — detailed BIM deliverable example by 3BL Studios`} 
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                 <p className="text-white font-medium text-sm">{item.title}</p>

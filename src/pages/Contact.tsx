@@ -83,7 +83,29 @@ const Contact = () => {
 
   return (
     <>
-      <SEOHead title="Contact Us" description="Start a project or book a consultation with 3BL Studios. Engineering-led BIM services for contractors in Europe and the Middle East." path="/contact" />
+      <SEOHead
+        title="Contact Us"
+        description="Start a project or book a consultation with 3BL Studios. Engineering-led BIM services for contractors in Europe and the Middle East."
+        path="/contact"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "name": "Contact 3BL Studios",
+          "url": "https://3bl-studios.com/contact",
+          "mainEntity": {
+            "@type": "Organization",
+            "name": "3BL Studios",
+            "email": "studios@3BLenterprises.com",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "sales",
+              "email": "studios@3BLenterprises.com",
+              "availableLanguage": "English",
+              "areaServed": ["Europe", "Middle East"]
+            }
+          }
+        }}
+      />
       {/* Hero */}
       <section className="relative bg-navy overflow-hidden">
         <div 
