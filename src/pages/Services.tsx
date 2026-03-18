@@ -199,8 +199,9 @@ const Services = () => (
                 <div className="w-full lg:w-2/5 aspect-video rounded-md overflow-hidden border border-border/50 shadow-sm">
                   <img 
                     src={cat.image} 
-                    alt={cat.title} 
+                    alt={`${cat.title} — BIM service by 3BL Studios for construction projects`} 
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
                   />
                 </div>
               </div>
