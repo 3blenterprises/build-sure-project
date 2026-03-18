@@ -18,8 +18,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      {/* Change BrowserRouter to HashRouter below */}
-      <HashRouter> 
+      <BrowserRouter>
         <Layout>
           <Routes>
             <Route path="/" element={<Index />} />
@@ -30,7 +29,7 @@ const App = () => (
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
-      </HashRouter>
+      </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );
