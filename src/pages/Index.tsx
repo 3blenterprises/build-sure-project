@@ -63,20 +63,20 @@ const Index = () => {
         title="3BL Studios – Engineering-Led BIM & Constructability Services"
         description="First-pass accurate BIM models and build-ready construction documentation for contractors across Europe and the Middle East, supervised by U.S.-licensed professional engineers."
         path="/"
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            name: "3BL Studios",
-            url: "https://build-sure-project.lovable.app",
-            description: "Engineering-led BIM & constructability services for contractors across Europe and the Middle East.",
-            contactPoint: { "@type": "ContactPoint", email: "studios@3BLenterprises.com", contactType: "sales" },
-            areaServed: ["Europe", "Middle East"],
-            serviceType: ["BIM Modeling", "Construction Documentation", "Rebar Detailing", "Constructability Services"],
-          }),
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "ProfessionalService",
+          "name": "3BL Studios",
+          "url": "https://3bl-studios.com",
+          "description": "Engineering-led BIM & constructability services for contractors across Europe and the Middle East.",
+          "email": "studios@3BLenterprises.com",
+          "areaServed": [
+            { "@type": "Continent", "name": "Europe" },
+            { "@type": "Place", "name": "Middle East" }
+          ],
+          "serviceType": ["BIM Modeling", "Construction Documentation", "Rebar Detailing", "Constructability Services", "MEP Coordination"],
+          "knowsAbout": ["Building Information Modeling", "Concrete Lift Drawings", "Formwork Planning", "Rebar Modeling"],
+          "priceRange": "$$"
         }}
       />
       {/* HERO */}
